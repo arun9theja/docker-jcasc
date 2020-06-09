@@ -14,22 +14,22 @@ build:  ## Build docker image!
 	docker-compose up --build --no-start
 
 up: ## Run
-	docker-compose up -d && open http://127.0.0.1:8080
+	docker-compose up -d
 
-down: ## Down
+stop: ## Stop services
 	docker-compose down
 
 logs: ## Show container logs
 	docker-compose logs
 
-restart: ## reload
+restart: ## Restart services.
 	docker-compose restart
 
-rebuild: ## rebuild
+rebuild: ## Rebuild a clean environment.
 	 make clean && make build && make up
 
-clean: ## Down
+clean: ## Delete everything.
 	docker-compose down -v  && rm -rf jenkins_home || true
 
-shell: ## SHELL
+shell: ## Get a shell into the container.
 	 docker run -it p0bailey/jenkins:alpine /bin/bash
