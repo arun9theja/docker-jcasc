@@ -1,6 +1,6 @@
 # docker-jcasc
 
-<img src=".img/jenkins.png" alt="Jenkins" width="600"/>
+<img src=".img/jenkins.png" alt="Jenkins" width="900"/>
 
 
 Quickstart
