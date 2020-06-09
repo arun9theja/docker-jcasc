@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+  jenkins:
+    build:
+      context: .
+    image: p0bailey/jenkins:alpine
+    ports:
+      - "5000:5000"
+      - "8080:8080"
+    volumes:
+      - ${PWD}/jenkins_home:/var/jenkins_home
+      - ./casc_configs:/var/jenkins_conf
+    environment:
+      - CASC_JENKINS_CONFIG=/var/jenkins_conf
