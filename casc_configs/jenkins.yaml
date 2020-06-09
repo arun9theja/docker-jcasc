@@ -1,0 +1,26 @@
+jenkins:
+  systemMessage: "Demo setup for Jenkins Configuration as Code plugin.\n\n"
+
+  numExecutors: 0
+  mode: NORMAL
+  scmCheckoutRetryCount: 3
+  labelString: "master-label"
+
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${adminuser:-admin}
+          password: ${adminpw:-admin}
+
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Read:authenticated"
+        - "Job/Read:authenticated"
+        - "View/Read:authenticated"
+        - "Overall/Administer:authenticated"
+
+  crumbIssuer: "standard"
+  remotingSecurity:
+    enabled: true
