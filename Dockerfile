@@ -9,11 +9,11 @@ ENV JENKINS_PASS admin
 
 USER root
 RUN apk add \
- docker \
- shadow \
- maven \
- openjdk8-jre \
- git
+  docker \
+  shadow \
+  maven \
+  openjdk8-jre \
+  git
 
 RUN usermod -aG docker jenkins
 
@@ -21,6 +21,4 @@ USER jenkins
 
 COPY jenkins-plugins /usr/share/jenkins/plugins
 
-RUN while read i ; \
-      do /usr/local/bin/install-plugins.sh $i ; \
-    done < /usr/share/jenkins/plugins
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins
