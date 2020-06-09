@@ -25,3 +25,7 @@ rebuild                        Rebuild a clean environment.
 clean                          Delete everything.
 shell                          Get a shell into the container.
 ```
+
+Add your Jcasc configuration to casc_configs/jenkins.yaml 
+
+Official examples: https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos
